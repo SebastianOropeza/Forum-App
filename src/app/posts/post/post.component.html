@@ -7,6 +7,9 @@
             <div class="row">
                 <h4>{{post.body}}</h4>
             </div>
+            <div class="row mt-2">
+                <i [ngClass]="liked ? 'fa fa-heart' : 'far fa-heart'" (click)="like()"></i>
+            </div>
         </div>
     </div>
 </div>

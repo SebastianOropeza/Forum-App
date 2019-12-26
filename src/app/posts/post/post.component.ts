@@ -12,6 +12,7 @@ import { CommentsService } from '../data/comments.service';
 export class PostComponent implements OnInit {
     post: Post;
     comments: Comment[];
+    liked: boolean;
 
     constructor(private postsService: PostsService, private commentsService: CommentsService) { }
 
@@ -22,6 +23,10 @@ export class PostComponent implements OnInit {
         this.commentsService.comments$.subscribe(data => {
             this.comments = data;
         });
+        this.liked = false;
     }
 
+    like() {
+        this.liked = !this.liked;
+    }
 }
